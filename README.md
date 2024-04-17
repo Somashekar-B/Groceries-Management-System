@@ -47,19 +47,19 @@ This project is a TypeScript-based application for managing groceries stocks and
 1. **Start a MySQL Container**: Start a MySQL container in Docker with the following command:
 ```bash
 docker run mysql
+```
+2. **Setup Database and Tables**: Follow steps 5 and 6 from Local Development Setup to create the `groceries` database and tables.
 
-3. **Setup Database and Tables**: Follow steps 5 and 6 from Local Development Setup to create the `groceries` database and tables.
+3. **Navigate to Project Repository**: Navigate to the project repository in your machine.
 
-4. **Navigate to Project Repository**: Navigate to the project repository in your machine.
-
-5. **Build Application in Docker**: Build the application in Docker with the following command:
+4. **Build Application in Docker**: Build the application in Docker with the following command:
 ```bash
 docker build -t groceries:latest .
-
-6. **Run Docker Image**: Run the Docker image with the following command:
+```
+5. **Run Docker Image**: Run the Docker image with the following command:
 ```bash
 docker run -it -p 3000 groceries:latest
-
+```
 
 
 ## Using Functionalities
