@@ -53,18 +53,28 @@ const addUser = async (req: Request, res: Response) => {
             var isValid: boolean = false;
             
             if (newUser.userType.toLowerCase() == 'admin'){
-                const Auth = headers.authorization;
-                if(Auth) {
-                    const token = Auth.split(" ")[1];
-                    try {
-                        var tokenData = jwt.verify(token, JWT_SECRET) as TokenData;
-                        if (tokenData.role.toLowerCase() == 'admin') {
-                            isValid = true;
+                const allAdmins = await User.findAll({
+                    where: {
+                        userType: 'admin'
+                    }
+                })
+                if(allAdmins.length == 0){
+                    isValid = true;
+                }else{
+                    const Auth = headers.authorization;
+                    if (Auth) {
+                        const token = Auth.split(" ")[1];
+                        try {
+                            var tokenData = jwt.verify(token, JWT_SECRET) as TokenData;
+                            if (tokenData.role.toLowerCase() == 'admin') {
+                                isValid = true;
+                            }
+                        } catch (error) {
+                            isValid = false;
                         }
-                    } catch (error) {
-
                     }
                 }
+                
             }else{
                 isValid = true
             }
