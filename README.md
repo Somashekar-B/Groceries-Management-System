@@ -42,7 +42,7 @@ This project is a TypeScript-based application for managing groceries stocks and
 
 9. **Start Application**: Run `node server.js` to start the application.
 
-### Setup 2: Docker Container
+## Setup 2: Docker Container
 
 1. **Start a MySQL Container**: Start a MySQL container in Docker with the following command:
 ```bash
@@ -63,7 +63,7 @@ docker run -it -p 3000 groceries:latest
 
 
 ## Using Functionalities
-**please find curls to use the functionalities in the respected routes.ts files**
+**Please find curls to use the functionalities in the respected routes.ts files**
 
 ## Contributing
 
