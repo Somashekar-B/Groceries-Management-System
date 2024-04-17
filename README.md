@@ -2,7 +2,7 @@
 
 This project is a TypeScript-based application for managing groceries stocks and user authentication.
 
-## Setup
+## Setup 1: Local Development
 
 1. **Download Code**: Clone this repository to your local machine using `git clone <repository-url>`.
 
@@ -41,6 +41,26 @@ This project is a TypeScript-based application for managing groceries stocks and
 8. **Navigate to Dist Directory**: Run `cd ./dist` to navigate to the compiled files directory.
 
 9. **Start Application**: Run `node server.js` to start the application.
+
+### Setup 2: Docker Container
+
+1. **Start a MySQL Container**: Start a MySQL container in Docker with the following command:
+```bash
+docker run mysql
+
+3. **Setup Database and Tables**: Follow steps 5 and 6 from Local Development Setup to create the `groceries` database and tables.
+
+4. **Navigate to Project Repository**: Navigate to the project repository in your machine.
+
+5. **Build Application in Docker**: Build the application in Docker with the following command:
+```bash
+docker build -t groceries:latest .
+
+6. **Run Docker Image**: Run the Docker image with the following command:
+```bash
+docker run -it -p 3000 groceries:latest
+
+
 
 ## Using Functionalities
 **please find curls to use the functionalities in the respected routes.ts files**
